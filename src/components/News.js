@@ -27,9 +27,8 @@ export class News extends Component {
     document.title=`${this.capfirstletter(this.props.category)}-NewsAizen`;
   }
   async componentDidMount(page) {
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${process.env.REACT_APP_NEWSKEY}&page=${page}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=49e80c7b88734bee82e0821cc42d2d37&page=${page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
-    console.log('NEWSKEY:', process.env.NEWSKEY);
     try {
       let data = await fetch(url);
       let parsedData = await data.json();
